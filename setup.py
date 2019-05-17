@@ -9,9 +9,10 @@ import os
 import sys
 from shutil import rmtree
 
-from setuptools import find_packages, setup, Command
+from setuptools import setup, Command
 
 NAME = 'povertylevel'
+PACKAGE = 'poverty'
 DESCRIPTION = ('U.S. federal poverty level guidelines used to determine '
                'financial eligibility for certain federal programs')
 URL = 'https://github.com/bryand1/python-poverty-level'
@@ -28,7 +29,7 @@ except FileNotFoundError:
     long_description = DESCRIPTION
 
 about = {}
-with open(os.path.join(here, NAME, '__version__.py')) as f:
+with open(os.path.join(here, PACKAGE, '__version__.py')) as f:
     exec(f.read(), about)
 
 
@@ -79,10 +80,8 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    # py_modules=['poverty'],
-    # install_requires=REQUIRED,
     include_package_data=True,
-    packages=['poverty'],
+    packages=[PACKAGE],
     zip_safe=False,
     license='MIT',
     classifiers=[
