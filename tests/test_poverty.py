@@ -10,8 +10,7 @@ def test_povertylevel_guidelines():
     pl.state = 'alaska'
     assert pl.get(2) == alaska[2]
 
-    pl.state = 'ak'
-    assert pl.get(3) == alaska[3]
+    assert pl.get(household_size=3, state='AK') == alaska[3]
 
     pl.state = 'district of columbia'
     assert pl.get(4) == contiguous[4]
@@ -29,3 +28,10 @@ def test_povertylevel_percent():
     pl = PovertyLevel()
     assert pl.percent(12490, 1, state='New Jersey') == 1.00
     assert pl.percent(14380, 1, state='Hawaii') == 1.00
+    assert pl.percent(income=26660, household_size=3, state='AK') == 1.00
+
+
+def test_povertylevel_below():
+    pl = PovertyLevel()
+    pl.state = 'ak'
+    assert pl.below(income=26500, household_size=3)
