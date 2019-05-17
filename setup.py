@@ -11,7 +11,7 @@ from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
-NAME = 'poverty-level'
+NAME = 'poverty'
 DESCRIPTION = ('U.S. federal poverty level guidelines used to determine '
                'financial eligibility for certain federal programs')
 URL = 'https://github.com/bryand1/python-poverty-level'
