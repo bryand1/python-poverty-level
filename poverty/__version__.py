@@ -1,8 +1,0 @@
-__title__ = 'poverty'
-__description__ = 'U.S. Federal Poverty Level Guidelines'
-__url__ = 'https://github.com/bryand1/python-poverty-level'
-__version__ = '0.0.4'
-__author__ = 'Bryan Andrade'
-__author_email__ = 'me@bryanandrade.com'
-__license__ = 'MIT'
-__copyright__ = 'Copyright 2019 Bryan Andrade'
